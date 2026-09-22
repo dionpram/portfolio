@@ -12,58 +12,34 @@
 :root{--bg:#f9fafb;--ink:#111827;--body:#374151;--muted:#6b7280;--green:#15803d;--orange:#ff9340;--bar:#f4f3f6;--blue:#2563eb}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
 body{font-family:"Instrument Sans",system-ui,sans-serif}
-.page{min-height:100svh;display:flex;flex-direction:column}
-.nav{height:92px;padding:32px 80px;display:flex;align-items:center;justify-content:space-between}
+.page{height:100svh;min-height:600px;display:flex;flex-direction:column;overflow:hidden}
+.nav{height:92px;flex:0 0 92px;padding:32px 80px;display:flex;align-items:center;justify-content:space-between}
 .logo{width:23px;height:28px;display:block}.navlinks{display:flex;gap:48px}.nav a,.secondary{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none}
-.hero{flex:1;display:grid;grid-template-columns:minmax(300px,1fr) minmax(350px,1fr);gap:56px;align-items:center;padding:120px 80px}
-.art{width:100%;aspect-ratio:1312/1199;object-fit:cover;display:block}
-.copy{display:flex;flex-direction:column;gap:40px;align-items:flex-start}
-h1{font-size:64px;line-height:.95;letter-spacing:-.035em;margin:0;font-weight:700;max-width:612px}
+.hero{flex:1;min-height:0;display:grid;grid-template-columns:minmax(300px,1fr) minmax(350px,1fr);gap:56px;align-items:center;padding:clamp(24px,5vh,72px) 80px}
+.art{width:100%;max-height:100%;aspect-ratio:1312/1199;object-fit:contain;display:block}
+.copy{display:flex;flex-direction:column;gap:clamp(22px,3.2vh,40px);align-items:flex-start}
+h1{font-size:clamp(48px,4.45vw,64px);line-height:.95;letter-spacing:-.035em;margin:0;font-weight:700;max-width:612px}
 .accent-green{color:var(--green);font-style:italic}.accent-orange{color:var(--orange);font-style:italic}.strike{text-decoration:line-through}
-.intro{font-size:24px;line-height:1.6;color:var(--body);margin:0;max-width:612px}
+.intro{font-size:clamp(19px,1.67vw,24px);line-height:1.6;color:var(--body);margin:0;max-width:612px}
 .actions{display:flex;align-items:center;gap:24px}.primary{border:0;border-radius:4px;background:var(--ink);color:#fff;padding:14px 28px;font:600 14px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}.secondary{font-weight:600;border:0;background:none;padding:0;cursor:pointer}
 .modebar{height:68px;flex:0 0 68px;background:var(--bar);display:flex;align-items:center;justify-content:center}
 .mode{display:flex;align-items:center;gap:16px;color:var(--muted);font:500 16px/24px Inter,sans-serif;letter-spacing:.08px}
 .switch{width:68px;height:36px;padding:2px;border:0;border-radius:999px;background:#e1e5ed;display:flex;align-items:center;cursor:pointer;transition:background .2s}.knob{width:32px;height:32px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15);display:grid;place-items:center;transform:translateX(0);transition:transform .2s}.knob:before{content:"×";font:500 20px/1 Inter;color:#6b7280}
 body.unfiltered .switch{background:var(--blue)}body.unfiltered .knob{transform:translateX(32px)}body.unfiltered .knob:before{content:"✓";font-size:15px;color:var(--blue)}
-@media(max-width:900px){.nav{height:auto;padding:24px 28px}.navlinks{gap:24px}.hero{grid-template-columns:1fr;gap:32px;padding:40px 28px 56px}.art{max-width:560px;margin:auto}.copy{gap:28px}h1{font-size:clamp(44px,10vw,64px)}.intro{font-size:20px}.modebar{position:sticky;bottom:0;z-index:5}}
+@media(max-width:900px){.page{height:auto;min-height:100svh;overflow:visible}.nav{height:auto;flex:0 0 auto;padding:24px 28px}.navlinks{gap:24px}.hero{min-height:calc(100svh - 160px);grid-template-columns:1fr;gap:32px;padding:40px 28px 56px}.art{max-width:560px;margin:auto}.copy{gap:28px}h1{font-size:clamp(44px,10vw,64px)}.intro{font-size:20px}.modebar{position:sticky;bottom:0;z-index:5}}
 @media(max-width:520px){.nav{padding:22px 20px}.navlinks{gap:18px}.hero{padding:24px 20px 40px}.art{min-width:0}.copy{min-width:0}h1{font-size:44px}.intro{font-size:18px;line-height:1.55}.actions{align-items:flex-start;flex-direction:column;gap:18px}.mode{gap:10px;font-size:14px}.switch{transform:scale(.9)}}
-</style>
-</head>
-<body>
-<div class="page">
-<header class="nav">
+</style></head>
+<body><div class="page"><header class="nav">
 <img class="logo" src="https://www.figma.com/api/mcp/asset/7f0add07-f3c1-4ee6-b118-19d59ed061c7.svg" alt="Dion">
-<nav class="navlinks" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="mailto:hello@pramadion.com">Contact</a></nav>
-</header>
-<main class="hero">
-<img id="heroArt" class="art" src="https://www.figma.com/api/mcp/asset/74a2460d-db87-4423-b3aa-4b23267eb888.png" alt="">
-<section class="copy" aria-live="polite">
-<h1 id="headline">Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.</h1>
+<nav class="navlinks" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="mailto:hello@pramadion.com">Contact</a></nav></header>
+<main class="hero"><img id="heroArt" class="art" src="https://www.figma.com/api/mcp/asset/74a2460d-db87-4423-b3aa-4b23267eb888.png" alt="">
+<section class="copy" aria-live="polite"><h1 id="headline">Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.</h1>
 <p class="intro" id="intro">Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p>
-<div class="actions"><a class="primary" id="workCta" href="#work">View selected work →</a><button class="secondary" id="cvCta" type="button">Download CV</button></div>
-</section>
-</main>
-<footer class="modebar">
-<div class="mode"><span>Filtered</span><button id="modeSwitch" class="switch" type="button" role="switch" aria-checked="false" aria-label="Toggle unfiltered mode"><span class="knob"></span></button><span>Unfiltered</span></div>
-</footer>
-</div>
+<div class="actions"><a class="primary" id="workCta" href="#work">View selected work →</a><button class="secondary" id="cvCta" type="button">Download CV</button></div></section></main>
+<footer class="modebar"><div class="mode"><span>Filtered</span><button id="modeSwitch" class="switch" type="button" role="switch" aria-checked="false" aria-label="Toggle unfiltered mode"><span class="knob"></span></button><span>Unfiltered</span></div></footer></div>
 <script>
-const filtered={
- art:"https://www.figma.com/api/mcp/asset/74a2460d-db87-4423-b3aa-4b23267eb888.png",
- headline:'Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.',
- intro:"Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.",
- work:"View selected work →",cv:"Download CV"
-};
-const unfiltered={
- art:"https://www.figma.com/api/mcp/asset/8b13cb37-c6bb-414f-afa2-0b234c8a3e1e.png",
- headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',
- intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",
- work:"Fine, show me the work →",cv:"Another goddamn CV"
-};
-const sw=document.getElementById("modeSwitch"), art=document.getElementById("heroArt"), headline=document.getElementById("headline"), intro=document.getElementById("intro"), work=document.getElementById("workCta"), cv=document.getElementById("cvCta");
-let isUnfiltered=false;
+const filtered={art:"https://www.figma.com/api/mcp/asset/74a2460d-db87-4423-b3aa-4b23267eb888.png",headline:'Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.',intro:"Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.",work:"View selected work →",cv:"Download CV"};
+const unfiltered={art:"https://www.figma.com/api/mcp/asset/8b13cb37-c6bb-414f-afa2-0b234c8a3e1e.png",headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",work:"Fine, show me the work →",cv:"Another goddamn CV"};
+const sw=document.getElementById("modeSwitch"),art=document.getElementById("heroArt"),headline=document.getElementById("headline"),intro=document.getElementById("intro"),work=document.getElementById("workCta"),cv=document.getElementById("cvCta");let isUnfiltered=false;
 sw.addEventListener("click",()=>{isUnfiltered=!isUnfiltered;const s=isUnfiltered?unfiltered:filtered;document.body.classList.toggle("unfiltered",isUnfiltered);sw.setAttribute("aria-checked",String(isUnfiltered));art.src=s.art;headline.innerHTML=s.headline;intro.textContent=s.intro;work.textContent=s.work;cv.textContent=s.cv;});
-</script>
-</body>
-</html>
+</script></body></html>
