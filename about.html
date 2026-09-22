@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f9fafb">
+<title>About — Dion Pramadhan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9fafb;--ink:#111827;--body:#374151;--muted:#6b7280;--green:#15803d;--orange:#ff9340;--line:#e5e7eb;--card:#f3f4f6}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink)}body{font-family:"Instrument Sans",system-ui,sans-serif}
+.nav{height:92px;padding:32px 80px;display:flex;align-items:center;justify-content:space-between}.logo{width:23px;height:28px}.navlinks{display:flex;gap:48px}.navlinks a{position:relative;color:var(--muted);font-size:14px;font-weight:500;text-decoration:none;transition:color .22s ease}.navlinks a:hover,.navlinks a:focus-visible,.navlinks a.active{color:var(--ink)}.navlinks a::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left center;transition:transform .62s cubic-bezier(.22,1,.36,1);transition-delay:0s;pointer-events:none}.navlinks a.active::after,.navlinks a.is-leaving::after{transform:scaleX(1);transition-delay:.18s}
+.hero{display:grid;grid-template-columns:700px minmax(0,1fr);gap:48px;align-items:center;padding:100px 80px}.hero-copy{display:flex;flex-direction:column;gap:48px}.hero h1{font-size:72px;line-height:1;letter-spacing:-.035em;margin:0}.hero h1 .orange,.hero h1 .green{font-style:italic}.orange{color:var(--orange)}.green{color:var(--green)}.hero-copy p{font-size:18px;line-height:1.7;color:var(--body);margin:0}.hero-photo{height:620px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.section{padding:0 80px 100px}.two-col{display:grid;grid-template-columns:624px 624px;gap:48px;align-items:center}.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted);margin:0 0 12px}.section h2{font-size:44px;line-height:1.1;margin:0 0 48px}.experience{display:flex;flex-direction:column;gap:40px}.company{font-size:17px;font-weight:700;margin:0 0 4px}.role-row{display:flex;justify-content:space-between;color:var(--muted);gap:24px;font-size:14px}.role-row+.role-row{margin-top:4px}.role-row time{font-size:13px}
+.look-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:40px}.look-card h3{font-size:28px;margin:0 0 24px}.look-card p{font-size:15px;line-height:1.7;color:var(--body);margin:0 0 26px}.contact-btn{display:inline-flex;background:var(--green);color:#fff;text-decoration:none;padding:14px 24px;border-radius:4px;font-size:14px;font-weight:600}
+.snapshot{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px}.snapshot h2,.principles h2{font-size:44px;line-height:1.1;margin:0 0 48px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px}.card h3{font-size:22px;margin:0 0 16px}.card p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+.principles{padding:100px 80px}.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}.principle h3{font-size:13px;margin:0 0 8px}.principle p{font-size:13px;line-height:1.6;color:var(--body);margin:0}
+.footer{background:#fff;border-top:1px solid var(--line);padding:80px 80px 64px}.footer-line{height:1px;background:var(--line);margin-bottom:48px}.footer-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}.footer h2{font-size:40px;margin:0 0 24px}.footer-links{display:flex;gap:32px;font-size:15px;font-weight:600}.footer-links a{color:var(--ink);text-decoration:none}.footer-links a:last-child{color:var(--green)}.copyright{font-size:13px;color:var(--muted)}
+@media(max-width:1100px){.nav{padding:28px 32px}.hero{grid-template-columns:1fr 1fr;padding:72px 32px}.hero h1{font-size:56px}.section,.principles{padding-left:32px;padding-right:32px}.two-col{grid-template-columns:1fr 1fr}.snapshot{padding:72px 32px}.footer{padding:72px 32px 56px}.cards,.principle-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.nav{height:auto;padding:22px 20px}.navlinks{gap:18px}.hero{grid-template-columns:1fr;padding:56px 20px;gap:40px}.hero h1{font-size:48px}.hero-photo{height:460px}.section{padding:0 20px 72px}.two-col{grid-template-columns:1fr;gap:40px}.snapshot,.principles{padding:64px 20px}.cards,.principle-grid{grid-template-columns:1fr}.section h2,.snapshot h2,.principles h2{font-size:38px}.footer{padding:64px 20px 48px}.footer-row{align-items:flex-start;flex-direction:column}.footer h2{font-size:34px}.footer-links{flex-direction:column;gap:12px}}
+</style>
+</head>
+<body>
+<header class="nav">
+<a href="/"><img class="logo" src="https://www.figma.com/api/mcp/asset/919820b3-e8e3-4158-b755-526f86e909fb.svg" alt="Dion"></a>
+<nav class="navlinks" aria-label="Main navigation"><a href="/">Home</a><a href="/#work">Work</a><a class="active" aria-current="page" href="/about.html">About</a><a href="mailto:dion@pramadhan.design">Contact</a></nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-copy">
+<h1>Lead <span class="orange">Designer</span>. Bedroom Musician. <span class="green">Modular</span> Nerd.</h1>
+<div>
+<p>Hi, I'm Dion, a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p><br>
+<p>I've always been fascinated by how simple, well-designed pieces come together to create something bigger. Whether it's a product, a design system, a modular synthesizer, or even LEGO, I'm drawn to systems that are flexible, scalable, and thoughtfully built.</p><br>
+<p>That curiosity has shaped how I approach design throughout my career.</p>
+</div>
+</div>
+<div class="hero-photo"><img src="https://www.figma.com/api/mcp/asset/a2fa9ffd-c913-47bd-904e-3c33e21aed72.png" alt=""></div>
+</section>
+
+<section class="section"><div class="two-col">
+<div>
+<p class="eyebrow">Background</p><h2>Experience</h2>
+<div class="experience">
+<div><p class="company">Delivery Hero</p><div class="role-row"><span>Lead Product Designer</span><time>2023 - Present</time></div><div class="role-row"><span>Senior UX/UI Designer</span><time>2021 - 2023</time></div></div>
+<div><p class="company">Vaadin</p><div class="role-row"><span>UX Designer</span><time>2018 - 2021</time></div></div>
+<div><p class="company">Skookum</p><div class="role-row"><span>UX Designer</span><time>2016 - 2017</time></div></div>
+<div><p class="company">PT Pentacode Digital</p><div class="role-row"><span>UX Designer</span><time>2012 - 2015</time></div></div>
+</div>
+</div>
+<div class="look-card"><h3>What I'm looking for</h3><p>I'm looking for a team that values curiosity, craftsmanship, and collaboration as much as shipping great products.<br><br>The problems that excite me most are usually the messy ones—complex systems, design at scale, accessibility, and the growing intersection between design, engineering, and AI.<br><br>More than anything, I enjoy working with thoughtful people who care deeply about building things that genuinely improve someone's day.</p><a class="contact-btn" href="mailto:dion@pramadhan.design">Get in touch</a></div>
+</div></section>
+
+<section class="snapshot">
+<p class="eyebrow">Snapshot</p><h2>Design approach</h2>
+<div class="cards">
+<div class="card"><h3>Systems thinking</h3><p>I design products with the bigger picture in mind-creating foundations that help teams build consistently as products grow.</p></div>
+<div class="card"><h3>Product thinking</h3><p>I balance user needs, business goals, and technical constraints to make decisions that create meaningful product outcomes.</p></div>
+<div class="card"><h3>Collaboration</h3><p>I enjoy bringing designers, engineers, and product teams together to solve problems and build better products.</p></div>
+<div class="card"><h3>Craft</h3><p>I care deeply about thoughtful interactions, accessibility, and visual detail that make products feel intuitive and enjoyable to use.</p></div>
+</div>
+</section>
+
+<section class="principles">
+<p class="eyebrow">Principles</p><h2>How I think about design</h2>
+<div class="principle-grid">
+<div class="principle"><h3>Think beyond the screen</h3><p>Great products aren't just well-designed interfaces-they're the result of thoughtful systems, collaboration, and shared understanding.</p></div>
+<div class="principle"><h3>Balance complexity</h3><p>Every design decision should work for users, support business goals, and respect technical realities.</p></div>
+<div class="principle"><h3>Build together</h3><p>The best ideas come from collaboration. Strong partnerships between design, engineering, and product create better outcomes.</p></div>
+<div class="principle"><h3>Details matter</h3><p>Thoughtful interactions, accessibility, and visual craft shape experiences people enjoy using every day.</p></div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="footer-line"></div><div class="footer-row"><div><h2>Let's build better products together.</h2><div class="footer-links"><a href="mailto:dion@pramadhan.design">dion@pramadhan.design</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></div></div><div class="copyright">© 2024 Dion Pramadhan. Berlin based.</div></div></footer>
+<script>
+document.querySelectorAll(".navlinks a:not(.active)").forEach(link=>{link.addEventListener("click",e=>{const href=link.getAttribute("href");if(!href||href.startsWith("mailto:")||href.startsWith("http"))return;e.preventDefault();document.querySelectorAll(".navlinks a").forEach(a=>a.classList.remove("active","is-leaving"));link.classList.add("active","is-leaving");setTimeout(()=>location.href=href,880)})});
+</script>
+</body></html>
