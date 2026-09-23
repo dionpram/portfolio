@@ -22,14 +22,21 @@
 .footer{background:#fff;border-top:1px solid var(--line);padding:80px 80px 64px}.footer-line{height:1px;background:var(--line);margin-bottom:48px}.footer-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}.footer h2{font-size:40px;margin:0 0 24px}.footer-links{display:flex;align-items:center;gap:24px}.footer-links .contact-btn,.footer-links .contact-link{font-size:14px}.copyright{font-size:13px;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){main,.footer{opacity:1!important;transform:none!important;transition:none!important}.navlinks a::after{transition:none!important}}@media(max-width:1100px){.nav{padding:28px 32px}.hero{grid-template-columns:1fr 1fr;padding:72px 32px}.hero h1{font-size:56px}.section,.principles{padding-left:32px;padding-right:32px}.two-col{grid-template-columns:1fr 1fr}.snapshot{padding:72px 32px}.footer{padding:72px 32px 56px}.cards,.principle-grid{grid-template-columns:repeat(2,1fr)}}
 @media(hover:none),(pointer:coarse){.experience-map{display:none}.two-col:has(.experience:hover) .look-card{opacity:1;transform:none;filter:none;pointer-events:auto}}@media(max-width:760px){.nav{height:auto;padding:22px 20px}.navlinks{gap:18px}.hero{grid-template-columns:1fr;padding:56px 20px;gap:40px}.hero h1{font-size:48px}.hero-photo{height:460px}.section{padding:0 20px 72px}.two-col{grid-template-columns:1fr;gap:40px}.snapshot,.principles{padding:64px 20px}.cards,.principle-grid{grid-template-columns:1fr}.section h2,.snapshot h2,.principles h2{font-size:38px}.footer{padding:64px 20px 48px}.footer-row{align-items:flex-start;flex-direction:column}.footer h2{font-size:34px}.footer-links{align-items:flex-start;flex-direction:column;gap:18px}}
+
+/* Accessibility hardening */
+.skip-link{position:fixed;top:12px;left:12px;z-index:9999;padding:10px 14px;background:#111827;color:#fff;border-radius:6px;font:600 14px/1.2 "Instrument Sans",sans-serif;text-decoration:none;transform:translateY(-160%);transition:transform .2s ease}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid #ff9340;outline-offset:4px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="nav">
 <a href="/"><img class="logo" src="https://www.figma.com/api/mcp/asset/919820b3-e8e3-4158-b755-526f86e909fb.svg" alt="Dion"></a>
 <nav class="navlinks" aria-label="Main navigation"><a href="/">Home</a><a href="/work.html">Work</a><a class="active" aria-current="page" href="/about.html">About Me</a></nav>
 </header>
-<main>
+<main id="main-content">
 <section class="hero">
 <div class="hero-copy">
 <h1>Lead <span class="orange">Designer</span>. Bedroom Musician. <span class="green">Modular</span> Nerd.</h1>
