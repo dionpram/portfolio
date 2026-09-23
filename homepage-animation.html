@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f9fafb">
+<title>Dion — Product Designer — Animation Prototype</title>
+<script>
+try{
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* Prototype page intentionally skips the production first-visit intro. */
+}catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="image" href="/assets/home-filtered.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/home-unfiltered.webp" type="image/webp">
+<link rel="prefetch" href="/about.html">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Inter:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9fafb;--ink:#111827;--body:#374151;--muted:#6b7280;--green:#15803d;--orange:#ff9340;--bar:#f4f3f6;--blue:#2563eb}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
+body{font-family:"Instrument Sans",system-ui,sans-serif}
+.page{height:100svh;min-height:600px;display:flex;flex-direction:column;overflow:hidden}.page.page-enter .hero,.page.page-enter .modebar{opacity:0;transform:translateY(12px)}.page.page-enter.is-loaded .hero,.page.page-enter.is-loaded .modebar{opacity:1;transform:none;transition:opacity .58s ease,transform .62s cubic-bezier(.22,1,.36,1)}.page.page-enter.is-loaded .modebar{transition-delay:.08s}
+.nav{height:92px;flex:0 0 92px;padding:32px 80px;display:flex;align-items:center;justify-content:space-between}
+.logo{width:23px;height:28px;display:block}.navlinks{display:flex;gap:48px}.nav a,.secondary{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none}.navlinks a{position:relative;transition:color .22s ease}.navlinks a:hover,.navlinks a:focus-visible,.navlinks a.active{color:var(--ink)}.navlinks a::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left center;transition:transform .62s cubic-bezier(.22,1,.36,1);transition-delay:0s;pointer-events:none}.navlinks a.active::after,.navlinks a.is-leaving::after{transform:scaleX(1);transition-delay:.18s}
+.hero{flex:1;min-height:0;display:grid;grid-template-columns:minmax(300px,1fr) minmax(350px,1fr);gap:56px;align-items:center;padding:clamp(24px,5vh,72px) 80px}
+.art-stage{position:relative;width:100%;aspect-ratio:1312/1199;max-height:100%}.art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;opacity:0;transform:translateX(12px);transition:opacity .58s ease,transform .65s cubic-bezier(.22,1,.36,1);pointer-events:none}.art.is-active{opacity:1;transform:translateX(0);z-index:1}
+.copy{display:flex;flex-direction:column;gap:clamp(22px,3.2vh,40px);align-items:flex-start}.copy>h1,.copy>.intro,.copy>.actions{transition:opacity .3s ease,transform .42s cubic-bezier(.22,1,.36,1)}.hero.is-switching .copy>h1,.hero.is-switching .copy>.intro,.hero.is-switching .copy>.actions{opacity:0;transform:translateY(8px)}.hero.is-entering .copy>h1{animation:copyIn .42s .03s both cubic-bezier(.22,1,.36,1)}.hero.is-entering .copy>.intro{animation:copyIn .42s .09s both cubic-bezier(.22,1,.36,1)}.hero.is-entering .copy>.actions{animation:copyIn .42s .15s both cubic-bezier(.22,1,.36,1)}@keyframes copyIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.art,.copy>h1,.copy>.intro,.copy>.actions,.switch,.knob,.navlinks a,.navlinks a::after,.mode-nudge,.mode-nudge path{transition:none!important;animation:none!important}}
+h1{font-size:clamp(48px,4.45vw,64px);line-height:.95;letter-spacing:-.035em;margin:0;font-weight:700;max-width:612px}
+.accent-green{color:var(--green);font-style:italic}.accent-orange{color:var(--orange);font-style:italic}.strike{text-decoration:line-through}
+.intro{font-size:clamp(19px,1.67vw,24px);line-height:1.6;color:var(--body);margin:0;max-width:612px}
+.actions{display:flex;align-items:center;gap:24px}.primary{border:0;border-radius:4px;background:var(--ink);color:#fff;padding:14px 28px;font:600 14px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}.secondary{font-weight:600;border:0;background:none;padding:0;cursor:pointer}
+.modebar{height:68px;flex:0 0 68px;background:var(--bar);display:flex;align-items:center;justify-content:center;position:relative}.mode-nudge{position:absolute;left:50%;bottom:52px;width:250px;text-align:center;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;color:#4b5563;font:500 16px/1.25 "Instrument Sans",sans-serif;font-style:italic;transition:opacity .5s ease,transform .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s}.mode-nudge.is-visible{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);transition-delay:0s;animation:nudgeBob 1.8s .7s ease-in-out infinite}.mode-nudge svg{display:block;width:82px;height:38px;margin:3px auto 0;overflow:visible}.mode-nudge path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:120;stroke-dashoffset:120}.mode-nudge.is-visible path{animation:nudgeDraw .8s .18s forwards cubic-bezier(.22,1,.36,1)}@keyframes nudgeDraw{to{stroke-dashoffset:0}}@keyframes nudgeBob{0%,100%{margin-bottom:0}50%{margin-bottom:5px}}
+.mode{display:flex;align-items:center;gap:16px;font:500 16px/24px Inter,sans-serif;letter-spacing:.08px}.mode-label{color:var(--muted);cursor:pointer;transition:color .22s ease}.mode-label:hover,.mode-label:focus-visible,.mode-label.is-active{color:var(--ink)}
+.switch{width:68px;height:36px;padding:2px;border:0;border-radius:999px;background:#e1e5ed;display:flex;align-items:center;cursor:pointer;transition:background .28s ease}.switch:hover{background:rgba(37,99,235,.5)}.knob{width:32px;height:32px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15);display:grid;place-items:center;transform:translateX(0);transition:transform .2s}.knob:before{content:"×";font:500 20px/1 Inter;color:#6b7280}
+body.unfiltered .switch{background:var(--blue)}body.unfiltered .switch:hover{background:rgba(37,99,235,.5)}body.unfiltered .knob{transform:translateX(32px)}body.unfiltered .knob:before{content:"✓";font-size:15px;color:var(--blue)}
+.page.is-page-leaving .hero,.page.is-page-leaving .modebar{opacity:0;transform:translateY(10px);transition:opacity .38s ease,transform .44s cubic-bezier(.22,1,.36,1)}@media(max-width:900px){.page{height:auto;min-height:100svh;overflow:visible}.nav{height:auto;flex:0 0 auto;padding:24px 28px}.navlinks{gap:24px}.hero{min-height:calc(100svh - 160px);grid-template-columns:1fr;gap:32px;padding:40px 28px 56px}.art-stage{max-width:560px;margin:auto}.copy{gap:28px;align-items:center;text-align:center}.actions{justify-content:center}h1{font-size:clamp(44px,10vw,64px)}.intro{font-size:20px}.modebar{position:sticky;bottom:0;z-index:5}}
+@media(max-width:520px){.nav{padding:22px 20px}.navlinks{gap:18px}.hero{padding:24px 20px 40px}.art{min-width:0}.copy{min-width:0;align-items:center;text-align:center}h1{font-size:44px}.intro{font-size:18px;line-height:1.55}.actions{align-items:center;justify-content:center;flex-direction:column;gap:18px}.mode{gap:10px;font-size:14px}.switch{transform:scale(.9)}}
+
+
+/* First-visit homepage choreography */
+.first-visit-intro .page.page-enter .hero{opacity:1;transform:none}
+.first-visit-intro .nav{opacity:0;transform:translateY(-14px)}
+.first-visit-intro .copy>h1,
+.first-visit-intro .copy>.intro,
+.first-visit-intro .copy>.actions{opacity:0;transform:translateY(12px)}
+.first-visit-intro .modebar{opacity:0!important;transform:translateY(14px)!important}
+.first-visit-intro .art-stage{opacity:0;transform:translate(var(--intro-x,0px),calc(var(--intro-y,0px) + 8px)) scale(.965);will-change:transform,opacity}
+.first-visit-intro.intro-art-visible .art-stage{opacity:1;transform:translate(var(--intro-x,0px),calc(var(--intro-y,0px) - 3px)) scale(1);transition:opacity 1.05s cubic-bezier(.22,.61,.36,1),transform 1.25s cubic-bezier(.16,1,.3,1)}
+.first-visit-intro.intro-art-settled .art-stage{opacity:1;transform:none;transition:transform .95s cubic-bezier(.16,1,.3,1)}
+.first-visit-intro.intro-content-visible .copy>h1{opacity:1;transform:none;transition:opacity .68s ease,transform .82s cubic-bezier(.16,1,.3,1)}
+.first-visit-intro.intro-content-visible .copy>.intro{opacity:1;transform:none;transition:opacity .68s .12s ease,transform .82s .12s cubic-bezier(.16,1,.3,1)}
+.first-visit-intro.intro-content-visible .copy>.actions{opacity:1;transform:none;transition:opacity .68s .24s ease,transform .82s .24s cubic-bezier(.16,1,.3,1)}
+.first-visit-intro.intro-chrome-visible .nav{opacity:1;transform:none;transition:opacity .85s ease,transform 1s cubic-bezier(.16,1,.3,1)}
+.first-visit-intro.intro-chrome-visible .modebar{opacity:1!important;transform:none!important;transition:opacity .85s .08s ease,transform 1s .08s cubic-bezier(.16,1,.3,1)!important}
+@media(max-width:900px){
+  .first-visit-intro .art-stage{transform:translateY(8px) scale(.975)}
+  .first-visit-intro.intro-art-visible .art-stage{transform:translateY(-3px) scale(1)}
+  .first-visit-intro.intro-art-settled .art-stage{transform:none}
+}
+
+
+/* Animation prototype — only used on homepage-animation.html */
+.layered-art{overflow:visible}
+.layered-art .motion-layer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  pointer-events:none;
+  transform-origin:center center;
+  will-change:transform,opacity;
+}
+.motion-base{z-index:1}
+.motion-torso{
+  z-index:2;
+  transform-origin:60% 61%;
+  animation:torsoDrift 4.8s ease-in-out infinite;
+}
+.motion-head{
+  z-index:4;
+  transform-origin:61% 49%;
+  animation:headDrift 5.7s ease-in-out infinite;
+}
+.motion-hand{z-index:5}
+.motion-hand-1{
+  opacity:1;
+  animation:handFrameOne 2.4s steps(1,end) infinite,handNudge 3.1s ease-in-out infinite;
+}
+.motion-hand-2{
+  opacity:0;
+  animation:handFrameTwo 2.4s steps(1,end) infinite,handNudgeAlt 3.1s ease-in-out infinite;
+}
+@keyframes torsoDrift{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  32%{transform:translate3d(.4px,-1.2px,0) rotate(-.18deg)}
+  68%{transform:translate3d(-.4px,1px,0) rotate(.16deg)}
+}
+@keyframes headDrift{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  28%{transform:translate3d(-1px,-1.2px,0) rotate(-.65deg)}
+  57%{transform:translate3d(.8px,.3px,0) rotate(.5deg)}
+  78%{transform:translate3d(-.2px,1px,0) rotate(-.15deg)}
+}
+@keyframes handFrameOne{
+  0%,42%{opacity:1}
+  43%,58%{opacity:0}
+  59%,100%{opacity:1}
+}
+@keyframes handFrameTwo{
+  0%,42%{opacity:0}
+  43%,58%{opacity:1}
+  59%,100%{opacity:0}
+}
+@keyframes handNudge{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  45%{transform:translate3d(.6px,-.8px,0) rotate(-.12deg)}
+  70%{transform:translate3d(-.3px,.5px,0) rotate(.08deg)}
+}
+@keyframes handNudgeAlt{
+  0%,100%{transform:translate3d(.2px,-.2px,0) rotate(-.08deg)}
+  50%{transform:translate3d(-.5px,.6px,0) rotate(.1deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-torso,.motion-head,.motion-hand-1,.motion-hand-2{animation:none!important;transform:none!important}
+  .motion-hand-1{opacity:1!important}
+  .motion-hand-2{opacity:0!important}
+}
+
+/* Accessibility hardening */
+.skip-link{position:fixed;top:12px;left:12px;z-index:9999;padding:10px 14px;background:#111827;color:#fff;border-radius:6px;font:600 14px/1.2 "Instrument Sans",sans-serif;text-decoration:none;transform:translateY(-160%);transition:transform .2s ease}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid #ff9340;outline-offset:4px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}}
+</style></head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a><div class="page page-enter"><header class="nav">
+<img class="logo" src="/assets/dp-logo.svg" alt="Dion">
+<nav class="navlinks" aria-label="Main navigation"><a class="active" href="/" aria-current="page">Home</a><a href="/work.html">Work</a><a href="/about.html">About Me</a></nav></header>
+<main id="main-content" class="hero"><div class="art-stage"><div id="artFiltered" class="art layered-art is-active" aria-hidden="true">
+<img class="motion-layer motion-base" src="/assets/animation/base.png" alt="" fetchpriority="high" decoding="async">
+<img class="motion-layer motion-torso" src="/assets/animation/torso.png" alt="" decoding="async">
+<img class="motion-layer motion-head" src="/assets/animation/head.png" alt="" decoding="async">
+<img class="motion-layer motion-hand motion-hand-1" src="/assets/animation/left-hand-1.png" alt="" decoding="async">
+<img class="motion-layer motion-hand motion-hand-2" src="/assets/animation/left-hand-2.png" alt="" decoding="async">
+</div><img id="artUnfiltered" class="art" src="/assets/home-unfiltered.webp" alt="" loading="eager" decoding="async"></div>
+<section class="copy" aria-live="polite"><h1 id="headline">Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.</h1>
+<p class="intro" id="intro">Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p>
+<div class="actions"><a class="primary" id="workCta" href="/work.html">View selected work →</a><a class="secondary" id="cvCta" href="/assets/Dion_Pramadhan-Resume-2026.pdf" download>Download CV</a></div></section></main>
+<footer class="modebar"><div id="modeNudge" class="mode-nudge" aria-hidden="true"><span id="nudgeText">Try the wild side.</span><svg id="nudgeArrow" viewBox="0 0 82 38" aria-hidden="true"><path d="M3 4 C 24 5, 48 8, 60 24 C 65 30, 68 33, 76 34 M 67 27 L 76 34 L 68 37"/></svg></div><div class="mode"><span id="filteredLabel" class="mode-label is-active" role="button" tabindex="0">Filtered</span><button id="modeSwitch" class="switch" type="button" role="switch" aria-checked="false" aria-label="Toggle unfiltered mode"><span class="knob"></span></button><span id="unfilteredLabel" class="mode-label" role="button" tabindex="0">Unfiltered</span></div></footer></div>
+<script>
+const pageEl=document.querySelector(".page");
+const isFirstVisitIntro=document.documentElement.classList.contains("first-visit-intro");
+if(isFirstVisitIntro){
+  const stage=document.querySelector(".art-stage");
+  const positionIntroArt=()=>{
+    if(window.matchMedia("(max-width: 900px)").matches){
+      stage.style.setProperty("--intro-x","0px");
+      stage.style.setProperty("--intro-y","0px");
+      return;
+    }
+    const rect=stage.getBoundingClientRect();
+    const dx=(window.innerWidth/2)-(rect.left+rect.width/2);
+    const dy=(window.innerHeight/2)-(rect.top+rect.height/2);
+    stage.style.setProperty("--intro-x",dx+"px");
+    stage.style.setProperty("--intro-y",dy+"px");
+  };
+  positionIntroArt();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    setTimeout(()=>{
+      document.documentElement.classList.add("intro-art-visible");
+      setTimeout(()=>document.documentElement.classList.add("intro-art-settled"),820);
+      setTimeout(()=>document.documentElement.classList.add("intro-content-visible"),1450);
+      setTimeout(()=>document.documentElement.classList.add("intro-chrome-visible"),2250);
+      setTimeout(()=>{
+        document.documentElement.classList.remove("first-visit-intro","intro-art-visible","intro-art-settled","intro-content-visible","intro-chrome-visible");
+        stage.style.removeProperty("--intro-x");
+        stage.style.removeProperty("--intro-y");
+        pageEl.classList.add("is-loaded");
+      },3350);
+    },320);
+  }));
+}else{
+  requestAnimationFrame(()=>requestAnimationFrame(()=>pageEl.classList.add("is-loaded")));
+}
+const filtered={art:"/assets/home-filtered.webp",headline:'Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.',intro:"Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.",work:"View selected work →",cv:"Download CV"};
+const unfiltered={art:"/assets/home-unfiltered.webp",headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",work:"Fine, show me the work →",cv:"Another goddamn CV"};
+const sw=document.getElementById("modeSwitch"),modeNudge=document.getElementById("modeNudge"),nudgeArrow=document.getElementById("nudgeArrow"),nudgeText=document.getElementById("nudgeText"),filteredLabel=document.getElementById("filteredLabel"),unfilteredLabel=document.getElementById("unfilteredLabel"),hero=document.querySelector(".hero"),artFiltered=document.getElementById("artFiltered"),artUnfiltered=document.getElementById("artUnfiltered"),headline=document.getElementById("headline"),intro=document.getElementById("intro"),work=document.getElementById("workCta"),cv=document.getElementById("cvCta");let isUnfiltered=false,isAnimating=false,nudgeTimer=null,nudgeHideTimer=null;
+const hideNudge=()=>{clearTimeout(nudgeHideTimer);modeNudge.classList.remove("is-visible")};const nudgeCopy=()=>isUnfiltered?"Back to the professional side.":"Try the wild side.";const scheduleNudge=(delay=11000)=>{clearTimeout(nudgeTimer);nudgeTimer=setTimeout(()=>{showNudge(nudgeCopy(),4200)},delay)};const showNudge=(text,duration=4200)=>{hideNudge();nudgeText.textContent=text;nudgeArrow.style.transform=isUnfiltered?"scaleX(-1)":"none";requestAnimationFrame(()=>modeNudge.classList.add("is-visible"));nudgeHideTimer=setTimeout(()=>{hideNudge();scheduleNudge(11000)},duration)};scheduleNudge(isFirstVisitIntro?7300:3000);
+sw.addEventListener("click",()=>{if(isAnimating)return;clearTimeout(nudgeTimer);hideNudge();isAnimating=true;isUnfiltered=!isUnfiltered;const s=isUnfiltered?unfiltered:filtered;document.body.classList.toggle("unfiltered",isUnfiltered);sw.setAttribute("aria-checked",String(isUnfiltered));filteredLabel.classList.toggle("is-active",!isUnfiltered);unfilteredLabel.classList.toggle("is-active",isUnfiltered);hero.classList.remove("is-entering");hero.classList.add("is-switching");setTimeout(()=>{artFiltered.classList.toggle("is-active",!isUnfiltered);artUnfiltered.classList.toggle("is-active",isUnfiltered);headline.innerHTML=s.headline;intro.textContent=s.intro;work.textContent=s.work;cv.textContent=s.cv;hero.classList.remove("is-switching");void hero.offsetWidth;hero.classList.add("is-entering");setTimeout(()=>{hero.classList.remove("is-entering");isAnimating=false;nudgeTimer=setTimeout(()=>showNudge(nudgeCopy(),4500),1500)},620)},260);});
+const setMode=wantUnfiltered=>{if(isAnimating||isUnfiltered===wantUnfiltered)return;sw.click()};filteredLabel.addEventListener("click",()=>setMode(false));unfilteredLabel.addEventListener("click",()=>setMode(true));filteredLabel.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setMode(false)}});unfilteredLabel.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setMode(true)}});
+document.querySelectorAll(".navlinks a:not(.active)").forEach(link=>{link.addEventListener("click",e=>{const href=link.getAttribute("href");if(!href||href.startsWith("mailto:"))return;e.preventDefault();document.querySelectorAll(".navlinks a").forEach(a=>a.classList.remove("active","is-leaving"));link.classList.add("active","is-leaving");const page=document.querySelector(".page");setTimeout(()=>page&&page.classList.add("is-page-leaving"),260);setTimeout(()=>{if(href.startsWith("#")){const target=document.querySelector(href);if(target)target.scrollIntoView({behavior:"smooth"});else location.href=href}else location.href=href},980)})});
+</script></body></html>
