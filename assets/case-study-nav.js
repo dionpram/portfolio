@@ -19,7 +19,7 @@
     root.setAttribute("aria-label", "Case study navigation");
     root.innerHTML = [
       '<a class="case-study-cycle__side case-study-cycle__prev" href="' + prev.href + '" aria-label="Previous case study: ' + prev.title + '"><span class="case-study-cycle__arrow">←</span><span class="case-study-cycle__word"> Prev</span></a>',
-      '<div class="case-study-cycle__current"><span class="case-study-cycle__label">Case study</span><a class="case-study-cycle__title" href="' + current.href + '">' + current.title + '</a></div>',
+      '<div class="case-study-cycle__current"><span class="case-study-cycle__label">Case study</span><span class="case-study-cycle__title" aria-current="page">' + current.title + '</span></div>',
       '<a class="case-study-cycle__side case-study-cycle__next" href="' + next.href + '" aria-label="Next case study: ' + next.title + '"><span class="case-study-cycle__word">Next </span><span class="case-study-cycle__arrow">→</span></a>'
     ].join("");
   });
