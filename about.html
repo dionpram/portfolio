@@ -56,7 +56,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <h1 id="aboutHeadline">Lead <span class="orange">Designer</span>. Bedroom Musician. <span class="green">Modular</span> Nerd.</h1>
 <div id="aboutIntro">
 <p>Hi, I'm Dion, a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p><br>
-<p>I've always been fascinated by how simple, well-designed pieces come together to create something bigger. Whether it's a product, a design system, a modular synthesizer, or even LEGO, I'm drawn to systems that are flexible, scalable, and thoughtfully built.</p><br>
+<p>I've always been fascinated by how simple, well-designed pieces come together to create something bigger. I naturally break complex problems into smaller, bite-sized parts, make each part understandable on its own, then connect them into a system that can grow without becoming a mess. Whether it's a product, a design system, a modular synthesizer, or even LEGO, I'm drawn to things that are flexible, reusable, and thoughtfully built.</p><br>
 <p>That curiosity has shaped how I approach design throughout my career.</p>
 </div>
 </div>
@@ -79,7 +79,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <section class="snapshot">
 <p id="snapshotEyebrow" class="eyebrow">Snapshot</p><h2 id="snapshotTitle">Design approach</h2>
 <div class="cards">
-<div class="card"><h3 id="card1Title">Systems thinking</h3><p id="card1Copy">I design products with the bigger picture in mind-creating foundations that help teams build consistently as products grow.</p></div>
+<div class="card"><h3 id="card1Title">Modular thinking</h3><p id="card1Copy">I break complex products into small, reusable pieces that are easier to understand, test, evolve, and recombine. The goal is not modularity for its own sake—it is making change safer and scale less painful.</p></div>
 <div class="card"><h3 id="card2Title">Product thinking</h3><p id="card2Copy">I balance user needs, business goals, and technical constraints to make decisions that create meaningful product outcomes.</p></div>
 <div class="card"><h3 id="card3Title">Collaboration</h3><p id="card3Copy">I enjoy bringing designers, engineers, and product teams together to solve problems and build better products.</p></div>
 <div class="card"><h3 id="card4Title">Craft</h3><p id="card4Copy">I care deeply about thoughtful interactions, accessibility, and visual detail that make products feel intuitive and enjoyable to use.</p></div>
@@ -110,13 +110,13 @@ requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add(
 document.querySelectorAll(".navlinks a:not(.active)").forEach(link=>{link.addEventListener("click",e=>{const href=link.getAttribute("href");if(!href||href.startsWith("mailto:")||href.startsWith("http"))return;e.preventDefault();document.querySelectorAll(".navlinks a").forEach(a=>a.classList.remove("active","is-leaving"));link.classList.add("active","is-leaving");setTimeout(()=>document.body.classList.add("page-leaving"),260);setTimeout(()=>location.href=href,980)})});
 const aboutFiltered={
   headline:'Lead <span class="orange">Designer</span>. Bedroom Musician. <span class="green">Modular</span> Nerd.',
-  intro:'<p>Hi, I\'m Dion, a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p><br><p>I\'ve always been fascinated by how simple, well-designed pieces come together to create something bigger. Whether it\'s a product, a design system, a modular synthesizer, or even LEGO, I\'m drawn to systems that are flexible, scalable, and thoughtfully built.</p><br><p>That curiosity has shaped how I approach design throughout my career.</p>',
+  intro:'<p>Hi, I\'m Dion, a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p><br><p>I\'ve always been fascinated by how simple, well-designed pieces come together to create something bigger. I naturally break complex problems into smaller, bite-sized parts, make each part understandable on its own, then connect them into a system that can grow without becoming a mess. Whether it\'s a product, a design system, a modular synthesizer, or even LEGO, I\'m drawn to things that are flexible, reusable, and thoughtfully built.</p><br><p>That curiosity has shaped how I approach design throughout my career.</p>',
   lookingTitle:"What I'm looking for",
   lookingCopy:"I'm looking for a team that values curiosity, craftsmanship, and collaboration as much as shipping great products.<br><br>The problems that excite me most are usually the messy ones—complex systems, design at scale, accessibility, and the growing intersection between design, engineering, and AI.<br><br>More than anything, I enjoy working with thoughtful people who care deeply about building things that genuinely improve someone's day.",
   email:"Send me an email",linkedin:"Connect on LinkedIn",
   snapshotEyebrow:"Snapshot",snapshotTitle:"Design approach",
   cards:[
-    ["Systems thinking","I design products with the bigger picture in mind-creating foundations that help teams build consistently as products grow."],
+    ["Modular thinking","I break complex products into small, reusable pieces that are easier to understand, test, evolve, and recombine. The goal is not modularity for its own sake—it is making change safer and scale less painful."],
     ["Product thinking","I balance user needs, business goals, and technical constraints to make decisions that create meaningful product outcomes."],
     ["Collaboration","I enjoy bringing designers, engineers, and product teams together to solve problems and build better products."],
     ["Craft","I care deeply about thoughtful interactions, accessibility, and visual detail that make products feel intuitive and enjoyable to use."]
@@ -131,13 +131,13 @@ const aboutFiltered={
 };
 const aboutUnfiltered={
   headline:'I design <span class="orange">useful <span class="swear">shit</span></span>. I make <span class="green">noise</span>. I overthink both.',
-  intro:'<p>Hi, I\'m Dion. I\'ve spent 13+ years designing digital products, design systems, and the weird edge cases everyone quietly hopes somebody else will deal with.</p><br><p>I like structure because chaos is <span class="swear">fucking</span> exhausting. Give me a messy product, too many opinions, inconsistent components, and a problem nobody quite owns, and I\'m usually interested.</p><br><p>Outside the polished decks: guitars, synths, punk, bikes, bad jokes, and an unreasonable amount of attention to tiny details.</p>',
+  intro:'<p>Hi, I\'m Dion. I\'ve spent 13+ years designing digital products, design systems, and the weird edge cases everyone quietly hopes somebody else will deal with.</p><br><p>I like structure because chaos is <span class="swear">fucking</span> exhausting. My instinct is usually to break the monster into small pieces, make one piece make sense, then connect the pieces back together. Give me a messy product, too many opinions, inconsistent components, and a problem nobody quite owns, and I\'m usually interested.</p><br><p>Outside the polished decks: guitars, synths, punk, bikes, bad jokes, and an unreasonable amount of attention to tiny details.</p>',
   lookingTitle:"What I actually want",
   lookingCopy:"Smart people. Low ego. Enough trust to say when an idea is <span class=\"swear\">shit</span> before we spend three months building it.<br><br>I like hard problems, messy systems, honest conversations, and teams that care more about making the product better than protecting somebody's precious first idea.<br><br>I don't need everything to be perfectly organised. I do need people to give a <span class=\"swear\">damn</span>.",
   email:"Send me the weird problem",linkedin:"Do the LinkedIn thing",
   snapshotEyebrow:'No <span class="swear">bullshit</span>',snapshotTitle:"How I actually work",
   cards:[
-    ["Fix the <span class=\"swear\">damn</span> system","If the same problem shows up three times, I stop patching it and start asking why the system keeps producing it."],
+    ["Small pieces. Better system.","I would rather solve one clear piece properly than pretend I can fix the whole <span class=\"swear\">damn</span> thing in one giant move. Small parts are easier to test, change, reuse, and put back together without breaking everything else."],
     ["Pretty isn't enough","A beautiful screen that solves the wrong problem is still the wrong <span class=\"swear\">fucking</span> screen."],
     ["Argue well","Good work survives disagreement. Bring opinions, bring evidence, and leave the ego at the door."],
     ["Care, selectively","Yes, I notice the 4px thing. No, not every 4px thing matters. Knowing the difference is part of the job."]
