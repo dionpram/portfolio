@@ -1,5 +1,8 @@
 .case-study-cycle{
   width:100%;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
   border-top:1px solid #e5e7eb;
   background:#fff;
   padding:120px 80px;
