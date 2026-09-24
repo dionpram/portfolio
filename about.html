@@ -96,6 +96,13 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 </section>
 </main>
 <footer class="footer"><div class="footer-line"></div><div class="footer-row"><div><h2>Let's build better products together.</h2><div class="footer-links"><a class="contact-btn" href="mailto:pramadhan.dion@gmail.com">Send me an email</a><a class="contact-link" href="https://www.linkedin.com/in/dion-pramadhan-168614108/" target="_blank" rel="noreferrer">Connect on LinkedIn</a></div></div><div class="copyright">© <span id="copyrightYear"></span> Dion Pramadhan. Berlin based.</div></div></footer>
+<div class="about-modebar" aria-label="About page mode">
+  <div class="about-mode">
+    <span id="aboutFilteredLabel" class="about-mode-label is-active" role="button" tabindex="0">Filtered</span>
+    <button id="aboutModeSwitch" class="about-switch" type="button" role="switch" aria-checked="false" aria-label="Toggle unfiltered About mode"><span class="about-knob"></span></button>
+    <span id="aboutUnfilteredLabel" class="about-mode-label" role="button" tabindex="0">Unfiltered</span>
+  </div>
+</div>
 <script>
 document.getElementById("copyrightYear").textContent=new Date().getFullYear();
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add("page-ready")));
@@ -186,11 +193,5 @@ aboutUnfilteredLabel.addEventListener("click",()=>setAboutMode(true));
 [aboutFilteredLabel,aboutUnfilteredLabel].forEach((label,i)=>label.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setAboutMode(i===1)}}));
 
 </script>
-<div class="about-modebar" aria-label="About page mode">
-  <div class="about-mode">
-    <span id="aboutFilteredLabel" class="about-mode-label is-active" role="button" tabindex="0">Filtered</span>
-    <button id="aboutModeSwitch" class="about-switch" type="button" role="switch" aria-checked="false" aria-label="Toggle unfiltered About mode"><span class="about-knob"></span></button>
-    <span id="aboutUnfilteredLabel" class="about-mode-label" role="button" tabindex="0">Unfiltered</span>
-  </div>
-</div>
+
 </body></html>
