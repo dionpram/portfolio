@@ -27,6 +27,7 @@
 body.about-switching .hero-copy h1,body.about-switching .hero-copy>div,body.about-switching .look-card h3,body.about-switching .look-card p,body.about-switching .look-card .contact-actions,body.about-switching .snapshot .eyebrow,body.about-switching .snapshot h2,body.about-switching .card h3,body.about-switching .card p,body.about-switching .principles .eyebrow,body.about-switching .principles h2,body.about-switching .principle h3,body.about-switching .principle p{opacity:0;transform:translateY(7px)}
 .about-modebar{position:fixed;left:50%;bottom:20px;z-index:50;transform:translateX(-50%);padding:10px 14px;background:rgba(249,250,251,.92);border:1px solid rgba(17,24,39,.1);border-radius:999px;box-shadow:0 10px 30px rgba(17,24,39,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .about-mode{display:flex;align-items:center;gap:12px;font:500 14px/20px "Instrument Sans",sans-serif;white-space:nowrap}
+.swear{text-decoration:line-through;text-decoration-thickness:.12em;text-decoration-color:var(--orange)}
 .about-mode-label{color:var(--muted);cursor:pointer;transition:color .22s ease}.about-mode-label:hover,.about-mode-label:focus-visible,.about-mode-label.is-active{color:var(--ink)}
 .about-switch{width:60px;height:32px;padding:2px;border:0;border-radius:999px;background:#e1e5ed;display:flex;align-items:center;cursor:pointer;transition:background .28s ease}.about-switch:hover{background:rgba(37,99,235,.45)}
 .about-knob{width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15);display:grid;place-items:center;transform:translateX(0);transition:transform .2s ease}.about-knob:before{content:"×";font:500 18px/1 "Instrument Sans",sans-serif;color:#6b7280}
@@ -47,7 +48,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="nav">
 <a href="/"><img class="logo" src="/assets/dp-logo.svg" alt="Dion"></a>
-<nav class="navlinks" aria-label="Main navigation"><a href="/">Home</a><a href="/work.html">Work</a><a class="active" aria-current="page" href="/about.html">About Me</a></nav>
+<nav class="navlinks" aria-label="Main navigation"><a href="/">Home</a><a href="/work.html">Work</a><a class="active" aria-current="page" href="/about.html">About + Contact</a></nav>
 </header>
 <main id="main-content">
 <section class="hero">
@@ -129,24 +130,24 @@ const aboutFiltered={
   ]
 };
 const aboutUnfiltered={
-  headline:'I design <span class="orange">useful shit</span>. I make <span class="green">noise</span>. I overthink both.',
-  intro:'<p>Hi, I\'m Dion. I\'ve spent 13+ years designing digital products, design systems, and the weird edge cases everyone quietly hopes somebody else will deal with.</p><br><p>I like structure because chaos is fucking exhausting. Give me a messy product, too many opinions, inconsistent components, and a problem nobody quite owns, and I\'m usually interested.</p><br><p>Outside the polished decks: guitars, synths, punk, bikes, bad jokes, and an unreasonable amount of attention to tiny details.</p>',
+  headline:'I design <span class="orange">useful <span class="swear">shit</span></span>. I make <span class="green">noise</span>. I overthink both.',
+  intro:'<p>Hi, I\'m Dion. I\'ve spent 13+ years designing digital products, design systems, and the weird edge cases everyone quietly hopes somebody else will deal with.</p><br><p>I like structure because chaos is <span class="swear">fucking</span> exhausting. Give me a messy product, too many opinions, inconsistent components, and a problem nobody quite owns, and I\'m usually interested.</p><br><p>Outside the polished decks: guitars, synths, punk, bikes, bad jokes, and an unreasonable amount of attention to tiny details.</p>',
   lookingTitle:"What I actually want",
-  lookingCopy:"Smart people. Low ego. Enough trust to say when an idea is shit before we spend three months building it.<br><br>I like hard problems, messy systems, honest conversations, and teams that care more about making the product better than protecting somebody's precious first idea.<br><br>I don't need everything to be perfectly organised. I do need people to give a damn.",
+  lookingCopy:"Smart people. Low ego. Enough trust to say when an idea is <span class="swear">shit</span> before we spend three months building it.<br><br>I like hard problems, messy systems, honest conversations, and teams that care more about making the product better than protecting somebody's precious first idea.<br><br>I don't need everything to be perfectly organised. I do need people to give a damn.",
   email:"Send me the weird problem",linkedin:"Do the LinkedIn thing",
-  snapshotEyebrow:"No bullshit",snapshotTitle:"How I actually work",
+  snapshotEyebrow:'No <span class="swear">bullshit</span>',snapshotTitle:"How I actually work",
   cards:[
-    ["Fix the damn system","If the same problem shows up three times, I stop patching it and start asking why the system keeps producing it."],
-    ["Pretty isn't enough","A beautiful screen that solves the wrong problem is still the wrong fucking screen."],
+    ["Fix the <span class=\"swear\">damn</span> system","If the same problem shows up three times, I stop patching it and start asking why the system keeps producing it."],
+    ["Pretty isn't enough","A beautiful screen that solves the wrong problem is still the wrong <span class=\"swear\">fucking</span> screen."],
     ["Argue well","Good work survives disagreement. Bring opinions, bring evidence, and leave the ego at the door."],
     ["Care, selectively","Yes, I notice the 4px thing. No, not every 4px thing matters. Knowing the difference is part of the job."]
   ],
   principlesEyebrow:"Rules I actually use",principlesTitle:"Less theatre. Better decisions.",
   principles:[
-    ["Make hard things feel obvious","Good design doesn't need to look clever. It needs to make complicated shit easier to understand."],
+    ["Make hard things feel obvious","Good design doesn't need to look clever. It needs to make complicated <span class=\"swear\">shit</span> easier to understand."],
     ["Kill pointless friction","Every extra step should earn its place. If it doesn't, get rid of it."],
     ["Disagree, then build","I'd rather have one honest argument than ten polite meetings where nobody says what they think."],
-    ["Give a shit about details","Craft matters. Accessibility matters. The tiny things matter when they change how the product feels or works."]
+    ["Give a <span class=\"swear\">shit</span> about details","Craft matters. Accessibility matters. The tiny things matter when they change how the product feels or works."]
   ]
 };
 const aboutModeSwitch=document.getElementById("aboutModeSwitch");
@@ -163,12 +164,12 @@ function applyAboutMode(data){
   $("lookingCopy").innerHTML=data.lookingCopy;
   $("lookingEmail").textContent=data.email;
   $("lookingLinkedIn").textContent=data.linkedin;
-  $("snapshotEyebrow").textContent=data.snapshotEyebrow;
+  $("snapshotEyebrow").innerHTML=data.snapshotEyebrow;
   $("snapshotTitle").textContent=data.snapshotTitle;
-  data.cards.forEach((item,i)=>{$("card"+(i+1)+"Title").textContent=item[0];$("card"+(i+1)+"Copy").textContent=item[1]});
+  data.cards.forEach((item,i)=>{$("card"+(i+1)+"Title").innerHTML=item[0];$("card"+(i+1)+"Copy").innerHTML=item[1]});
   $("principlesEyebrow").textContent=data.principlesEyebrow;
   $("principlesTitle").textContent=data.principlesTitle;
-  data.principles.forEach((item,i)=>{$("principle"+(i+1)+"Title").textContent=item[0];$("principle"+(i+1)+"Copy").textContent=item[1]});
+  data.principles.forEach((item,i)=>{$("principle"+(i+1)+"Title").innerHTML=item[0];$("principle"+(i+1)+"Copy").innerHTML=item[1]});
 }
 function setAboutMode(wantUnfiltered){
   if(aboutAnimating||aboutIsUnfiltered===wantUnfiltered)return;
