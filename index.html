@@ -15,8 +15,8 @@ try{
 }catch(e){}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" as="image" href="/assets/motion/home-motion-poc-v6-head-torso-stronger.webp" type="image/webp" fetchpriority="high">
-<link rel="preload" as="image" href="/assets/motion/homepage-unfiltered-skate-motion.webp" type="image/webp">
+<link rel="preload" as="image" href="/assets/home-filtered.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/home-unfiltered.webp" type="image/webp">
 <link rel="prefetch" href="/about.html">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Inter:wght@500&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <a class="skip-link" href="#main-content">Skip to main content</a><div class="page page-enter"><header class="nav">
 <img class="logo" src="/assets/dp-logo.svg" alt="Dion">
 <nav class="navlinks" aria-label="Main navigation"><a class="active" href="/" aria-current="page">Home</a><a href="/work.html">Work</a><a href="/about.html">About + Contact</a></nav></header>
-<main id="main-content" class="hero"><div class="art-stage"><img id="artFiltered" class="art is-active" src="/assets/motion/home-motion-poc-v6-head-torso-stronger.webp" alt="" fetchpriority="high" decoding="async"><img id="artUnfiltered" class="art" src="/assets/motion/homepage-unfiltered-skate-motion.webp" alt="" loading="eager" decoding="async"></div>
+<main id="main-content" class="hero"><div class="art-stage"><img id="artFiltered" class="art is-active" src="/assets/home-filtered.webp" alt="" fetchpriority="high" decoding="async"><img id="artUnfiltered" class="art" src="/assets/home-unfiltered.webp" alt="" loading="eager" decoding="async"></div>
 <section class="copy" aria-live="polite"><h1 id="headline">Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.</h1>
 <p class="intro" id="intro">Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p>
 <div class="actions"><a class="primary" id="workCta" href="/work.html">View selected work →</a><a class="secondary" id="cvCta" href="/assets/Dion_Pramadhan-Resume-2026.pdf" download>Download CV</a></div></section></main>
@@ -113,8 +113,8 @@ if(isFirstVisitIntro){
 }else{
   requestAnimationFrame(()=>requestAnimationFrame(()=>pageEl.classList.add("is-loaded")));
 }
-const filtered={art:"/assets/motion/home-motion-poc-v6-head-torso-stronger.webp",headline:'Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.',intro:"Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.",work:"View selected work →",cv:"Download CV"};
-const unfiltered={art:"/assets/motion/homepage-unfiltered-skate-motion.webp",headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",work:"Fine, show me the work →",cv:"Another goddamn CV"};
+const filtered={art:"/assets/home-filtered.webp",headline:'Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.',intro:"Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.",work:"View selected work →",cv:"Download CV"};
+const unfiltered={art:"/assets/home-unfiltered.webp",headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",work:"Fine, show me the work →",cv:"Another goddamn CV"};
 const sw=document.getElementById("modeSwitch"),modeNudge=document.getElementById("modeNudge"),nudgeArrow=document.getElementById("nudgeArrow"),nudgeText=document.getElementById("nudgeText"),filteredLabel=document.getElementById("filteredLabel"),unfilteredLabel=document.getElementById("unfilteredLabel"),hero=document.querySelector(".hero"),artFiltered=document.getElementById("artFiltered"),artUnfiltered=document.getElementById("artUnfiltered"),headline=document.getElementById("headline"),intro=document.getElementById("intro"),work=document.getElementById("workCta"),cv=document.getElementById("cvCta");let isUnfiltered=false,isAnimating=false,nudgeTimer=null,nudgeHideTimer=null;
 
 const hideNudge=()=>{clearTimeout(nudgeHideTimer);modeNudge.classList.remove("is-visible")};const nudgeCopy=()=>isUnfiltered?"Back to the professional side.":"Try the wild side.";const scheduleNudge=(delay=11000)=>{clearTimeout(nudgeTimer);nudgeTimer=setTimeout(()=>{showNudge(nudgeCopy(),4200)},delay)};const showNudge=(text,duration=4200)=>{hideNudge();nudgeText.textContent=text;nudgeArrow.style.transform=isUnfiltered?"scaleX(-1)":"none";requestAnimationFrame(()=>modeNudge.classList.add("is-visible"));nudgeHideTimer=setTimeout(()=>{hideNudge();scheduleNudge(11000)},duration)};scheduleNudge(isFirstVisitIntro?7300:3000);
