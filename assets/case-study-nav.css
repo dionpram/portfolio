@@ -3,8 +3,8 @@
   max-width:none!important;
   margin-left:0!important;
   margin-right:0!important;
-  border-top:1px solid #e5e7eb;
-  background:#fff;
+  border-top:1px solid rgba(17,29,58,.14);
+  background:#faf8f2;
   padding:120px 80px;
   display:grid;
   grid-template-columns:1fr minmax(0,auto) 1fr;
@@ -13,7 +13,7 @@
 }
 .case-study-cycle__side{
   position:relative;
-  color:#111827;
+  color:#111d3a;
   font:700 56px/1 "Instrument Sans",system-ui,sans-serif;
   letter-spacing:-.035em;
   text-decoration:none;
@@ -28,7 +28,7 @@
   right:0;
   top:52%;
   height:3px;
-  background:#ff9340;
+  background:#c84b7e;
   transform:scaleX(0);
   transform-origin:left center;
   transition:transform .55s cubic-bezier(.22,1,.36,1);
@@ -49,14 +49,14 @@
   text-align:center;
 }
 .case-study-cycle__label{
-  color:#6b7280;
+  color:#6a7897;
   font:600 13px/1 "Instrument Sans",system-ui,sans-serif;
   text-transform:uppercase;
   letter-spacing:.02em;
 }
 .case-study-cycle__title{
   position:relative;
-  color:#111827;
+  color:#111d3a;
   font:700 56px/1.05 "Instrument Sans",system-ui,sans-serif;
   letter-spacing:-.035em;
   text-decoration:none;
