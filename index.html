@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#fafafb">
 <title>Dion — Product Designer</title>
+<script>
+try{
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(!reduceMotion&&!sessionStorage.getItem("portfolioIntroSeen")){
+    document.documentElement.classList.add("first-visit-intro");
+    sessionStorage.setItem("portfolioIntroSeen","1");
+  }
+}catch(e){}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="image" href="/assets/pramadion-home-desk.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="/assets/pramadion-home-skate.webp" type="image/webp">
@@ -24,7 +33,7 @@ body{font-family:"Instrument Sans",system-ui,sans-serif}
 h1{font-size:clamp(48px,4.45vw,64px);line-height:.95;letter-spacing:-.035em;margin:0;font-weight:700;max-width:612px}
 .accent-green{color:var(--green);font-style:italic}.accent-orange{color:var(--orange);font-style:italic}.strike{text-decoration:line-through}
 .intro{font-size:clamp(19px,1.67vw,24px);line-height:1.6;color:var(--body);margin:0;max-width:612px}
-.actions{display:flex;align-items:center;gap:18px 24px;flex-wrap:wrap}.primary{border:0;border-radius:4px;background:var(--ink);color:#fff;padding:14px 28px;font:600 14px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}.secondary{font-weight:600;border:0;background:none;padding:0;cursor:pointer}
+.actions{display:flex;align-items:center;gap:24px}.primary{border:0;border-radius:4px;background:var(--ink);color:#fff;padding:14px 28px;font:600 14px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}.secondary{font-weight:600;border:0;background:none;padding:0;cursor:pointer}
 .modebar{height:68px;flex:0 0 68px;background:var(--bar);display:flex;align-items:center;justify-content:center;position:relative}.mode-nudge{position:absolute;left:50%;bottom:52px;width:250px;text-align:center;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;color:#4b5563;font:500 16px/1.25 "Instrument Sans",sans-serif;font-style:italic;transition:opacity .5s ease,transform .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s}.mode-nudge.is-visible{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);transition-delay:0s;animation:nudgeBob 1.8s .7s ease-in-out infinite}.mode-nudge svg{display:block;width:82px;height:38px;margin:3px auto 0;overflow:visible}.mode-nudge path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:120;stroke-dashoffset:120}.mode-nudge.is-visible path{animation:nudgeDraw .8s .18s forwards cubic-bezier(.22,1,.36,1)}@keyframes nudgeDraw{to{stroke-dashoffset:0}}@keyframes nudgeBob{0%,100%{margin-bottom:0}50%{margin-bottom:5px}}
 .mode{display:flex;align-items:center;gap:16px;font:500 16px/24px Inter,sans-serif;letter-spacing:.08px}.mode-label{color:var(--muted);cursor:pointer;transition:color .22s ease}.mode-label:hover,.mode-label:focus-visible,.mode-label.is-active{color:var(--ink)}
 .switch{width:68px;height:36px;padding:2px;border:0;border-radius:999px;background:#e1e5ed;display:flex;align-items:center;cursor:pointer;transition:background .28s ease}.switch:hover{background:rgba(37,99,235,.5)}.knob{width:32px;height:32px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15);display:grid;place-items:center;transform:translateX(0);transition:transform .2s}.knob:before{content:"×";font:500 20px/1 Inter;color:#6b7280}
@@ -65,18 +74,51 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <svg class="logo" viewBox="0 0 23 28" role="img" aria-label="Dion" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 0H0V22.8571H4.6V28H5.75H6.9H11.5V25.7143H6.9V22.8571H11.5C17.8513 22.8571 23 17.7404 23 11.4286C23 5.11675 17.8513 0 11.5 0ZM6.9 18.2857V20.5714H11.5C16.581 20.5714 20.7 16.4781 20.7 11.4286C20.7 6.37909 16.581 2.28571 11.5 2.28571H2.3V20.5714H4.6V18.2857V6.28571V4.57143H11.5C15.3108 4.57143 18.4 7.64149 18.4 11.4286C18.4 15.2157 15.3108 18.2857 11.5 18.2857H9.2V16H11.5C14.0405 16 16.1 13.9533 16.1 11.4286C16.1 8.90383 14.0405 6.85714 11.5 6.85714H6.9V13.1429V16V18.2857Z" fill="currentColor"/></svg>
 <nav class="navlinks" aria-label="Main navigation"><a class="active" href="/" aria-current="page">Home</a><a href="/work.html">Work</a><a href="/about.html">About + Contact</a></nav></header>
 <main id="main-content" class="hero"><div class="art-stage"><img id="artFiltered" class="art is-active" src="/assets/pramadion-home-desk.webp" alt="" fetchpriority="high" decoding="async"><img id="artUnfiltered" class="art" src="/assets/pramadion-home-skate.webp" alt="" loading="eager" decoding="async"></div>
-<section class="copy" aria-live="polite"><h1 id="headline">Making complex products <span class="accent-green">easier to use</span>—and <span class="accent-orange">easier to build</span>.</h1>
-<p class="intro" id="intro">I’m Dion, a Berlin-based Lead Product Designer with 13+ years of experience across consumer mobile products, complex workflows, and design systems. At Delivery Hero, I worked on experiences and systems used across multiple brands and markets.</p>
-<div class="actions"><a class="primary" id="productCta" href="/app-consolidation.html">Explore a product case →</a><a class="secondary" id="systemCta" href="/bento-foundation.html">Explore design-system work →</a><a class="secondary" id="cvCta" href="/assets/Dion_Pramadhan-Resume-2026.pdf" download>Download CV</a></div></section></main>
+<section class="copy" aria-live="polite"><h1 id="headline">Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.</h1>
+<p class="intro" id="intro">Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p>
+<div class="actions"><a class="primary" id="workCta" href="/work.html">View selected work →</a><a class="secondary" id="cvCta" href="/assets/Dion_Pramadhan-Resume-2026.pdf" download>Download CV</a></div></section></main>
 <footer class="modebar"><div id="modeNudge" class="mode-nudge" aria-hidden="true"><span id="nudgeText">Try the wild side.</span><svg id="nudgeArrow" viewBox="0 0 82 38" aria-hidden="true"><path d="M3 4 C 24 5, 48 8, 60 24 C 65 30, 68 33, 76 34 M 67 27 L 76 34 L 68 37"/></svg></div><div class="mode"><span id="filteredLabel" class="mode-label is-active" role="button" tabindex="0">Filtered</span><button id="modeSwitch" class="switch" type="button" role="switch" aria-checked="false" aria-label="Toggle unfiltered mode"><span class="knob"></span></button><span id="unfilteredLabel" class="mode-label" role="button" tabindex="0">Unfiltered</span></div></footer></div>
 <script>
 const pageEl=document.querySelector(".page");
-requestAnimationFrame(()=>requestAnimationFrame(()=>pageEl.classList.add("is-loaded")));
-const filtered={art:"/assets/pramadion-home-desk.webp",headline:'Making complex products <span class="accent-green">easier to use</span>—and <span class="accent-orange">easier to build</span>.',intro:"I’m Dion, a Berlin-based Lead Product Designer with 13+ years of experience across consumer mobile products, complex workflows, and design systems. At Delivery Hero, I worked on experiences and systems used across multiple brands and markets.",product:"Explore a product case →",system:"Explore design-system work →",cv:"Download CV"};
-const unfiltered={art:"/assets/pramadion-home-skate.webp",headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",product:"Show me the product mess →",system:"Show me the system work →",cv:"Another goddamn CV"};
-const sw=document.getElementById("modeSwitch"),modeNudge=document.getElementById("modeNudge"),nudgeArrow=document.getElementById("nudgeArrow"),nudgeText=document.getElementById("nudgeText"),filteredLabel=document.getElementById("filteredLabel"),unfilteredLabel=document.getElementById("unfilteredLabel"),hero=document.querySelector(".hero"),artFiltered=document.getElementById("artFiltered"),artUnfiltered=document.getElementById("artUnfiltered"),headline=document.getElementById("headline"),intro=document.getElementById("intro"),product=document.getElementById("productCta"),system=document.getElementById("systemCta"),cv=document.getElementById("cvCta");let isUnfiltered=false,isAnimating=false,nudgeTimer=null,nudgeHideTimer=null;
+const isFirstVisitIntro=document.documentElement.classList.contains("first-visit-intro");
+if(isFirstVisitIntro){
+  const stage=document.querySelector(".art-stage");
+  const positionIntroArt=()=>{
+    if(window.matchMedia("(max-width: 900px)").matches){
+      stage.style.setProperty("--intro-x","0px");
+      stage.style.setProperty("--intro-y","0px");
+      return;
+    }
+    const rect=stage.getBoundingClientRect();
+    const dx=(window.innerWidth/2)-(rect.left+rect.width/2);
+    const dy=(window.innerHeight/2)-(rect.top+rect.height/2);
+    stage.style.setProperty("--intro-x",dx+"px");
+    stage.style.setProperty("--intro-y",dy+"px");
+  };
+  positionIntroArt();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    setTimeout(()=>{
+      document.documentElement.classList.add("intro-art-visible");
+      setTimeout(()=>document.documentElement.classList.add("intro-art-settled"),820);
+      setTimeout(()=>document.documentElement.classList.add("intro-content-visible"),1450);
+      setTimeout(()=>document.documentElement.classList.add("intro-chrome-visible"),2250);
+      setTimeout(()=>{
+        document.documentElement.classList.remove("first-visit-intro","intro-art-visible","intro-art-settled","intro-content-visible","intro-chrome-visible");
+        stage.style.removeProperty("--intro-x");
+        stage.style.removeProperty("--intro-y");
+        pageEl.classList.add("is-loaded");
+      },3350);
+    },320);
+  }));
+}else{
+  requestAnimationFrame(()=>requestAnimationFrame(()=>pageEl.classList.add("is-loaded")));
+}
+const filtered={art:"/assets/pramadion-home-desk.webp",headline:'Designing <span class="accent-green">thoughtful</span> digital <span class="accent-orange">products</span>.',intro:"Hi, I'm Dion - a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.",work:"View selected work →",cv:"Download CV"};
+const unfiltered={art:"/assets/pramadion-home-skate.webp",headline:'Designing <span class="accent-green strike">fucking</span><span class="accent-green"> useful</span> digital <span class="accent-orange strike">shit</span>.',intro:"Hi, I’m Dion. I’ve spent 13+ years designing digital shit, arguing about edge cases, fixing things nobody thought about, and occasionally moving rectangles around until everyone agrees.",work:"Fine, show me the work →",cv:"Another goddamn CV"};
+const sw=document.getElementById("modeSwitch"),modeNudge=document.getElementById("modeNudge"),nudgeArrow=document.getElementById("nudgeArrow"),nudgeText=document.getElementById("nudgeText"),filteredLabel=document.getElementById("filteredLabel"),unfilteredLabel=document.getElementById("unfilteredLabel"),hero=document.querySelector(".hero"),artFiltered=document.getElementById("artFiltered"),artUnfiltered=document.getElementById("artUnfiltered"),headline=document.getElementById("headline"),intro=document.getElementById("intro"),work=document.getElementById("workCta"),cv=document.getElementById("cvCta");let isUnfiltered=false,isAnimating=false,nudgeTimer=null,nudgeHideTimer=null;
 
-const hideNudge=()=>{clearTimeout(nudgeHideTimer);modeNudge.classList.remove("is-visible")};const nudgeCopy=()=>isUnfiltered?"Back to the professional side.":"Try the wild side.";const scheduleNudge=(delay=11000)=>{clearTimeout(nudgeTimer);nudgeTimer=setTimeout(()=>{showNudge(nudgeCopy(),4200)},delay)};const showNudge=(text,duration=4200)=>{hideNudge();nudgeText.textContent=text;nudgeArrow.style.transform=isUnfiltered?"scaleX(-1)":"none";requestAnimationFrame(()=>modeNudge.classList.add("is-visible"));nudgeHideTimer=setTimeout(()=>{hideNudge();scheduleNudge(11000)},duration)};scheduleNudge(3000);
-sw.addEventListener("click",()=>{if(isAnimating)return;clearTimeout(nudgeTimer);hideNudge();isAnimating=true;isUnfiltered=!isUnfiltered;const s=isUnfiltered?unfiltered:filtered;document.body.classList.toggle("unfiltered",isUnfiltered);sw.setAttribute("aria-checked",String(isUnfiltered));filteredLabel.classList.toggle("is-active",!isUnfiltered);unfilteredLabel.classList.toggle("is-active",isUnfiltered);hero.classList.remove("is-entering");hero.classList.add("is-switching");setTimeout(()=>{artFiltered.classList.toggle("is-active",!isUnfiltered);artUnfiltered.classList.toggle("is-active",isUnfiltered);headline.innerHTML=s.headline;intro.textContent=s.intro;product.textContent=s.product;system.textContent=s.system;cv.textContent=s.cv;hero.classList.remove("is-switching");void hero.offsetWidth;hero.classList.add("is-entering");setTimeout(()=>{hero.classList.remove("is-entering");isAnimating=false;nudgeTimer=setTimeout(()=>showNudge(nudgeCopy(),4500),1500)},620)},260);});
+const hideNudge=()=>{clearTimeout(nudgeHideTimer);modeNudge.classList.remove("is-visible")};const nudgeCopy=()=>isUnfiltered?"Back to the professional side.":"Try the wild side.";const scheduleNudge=(delay=11000)=>{clearTimeout(nudgeTimer);nudgeTimer=setTimeout(()=>{showNudge(nudgeCopy(),4200)},delay)};const showNudge=(text,duration=4200)=>{hideNudge();nudgeText.textContent=text;nudgeArrow.style.transform=isUnfiltered?"scaleX(-1)":"none";requestAnimationFrame(()=>modeNudge.classList.add("is-visible"));nudgeHideTimer=setTimeout(()=>{hideNudge();scheduleNudge(11000)},duration)};scheduleNudge(isFirstVisitIntro?7300:3000);
+sw.addEventListener("click",()=>{if(isAnimating)return;clearTimeout(nudgeTimer);hideNudge();isAnimating=true;isUnfiltered=!isUnfiltered;const s=isUnfiltered?unfiltered:filtered;document.body.classList.toggle("unfiltered",isUnfiltered);sw.setAttribute("aria-checked",String(isUnfiltered));filteredLabel.classList.toggle("is-active",!isUnfiltered);unfilteredLabel.classList.toggle("is-active",isUnfiltered);hero.classList.remove("is-entering");hero.classList.add("is-switching");setTimeout(()=>{artFiltered.classList.toggle("is-active",!isUnfiltered);artUnfiltered.classList.toggle("is-active",isUnfiltered);headline.innerHTML=s.headline;intro.textContent=s.intro;work.textContent=s.work;cv.textContent=s.cv;hero.classList.remove("is-switching");void hero.offsetWidth;hero.classList.add("is-entering");setTimeout(()=>{hero.classList.remove("is-entering");isAnimating=false;nudgeTimer=setTimeout(()=>showNudge(nudgeCopy(),4500),1500)},620)},260);});
 const setMode=wantUnfiltered=>{if(isAnimating||isUnfiltered===wantUnfiltered)return;sw.click()};filteredLabel.addEventListener("click",()=>setMode(false));unfilteredLabel.addEventListener("click",()=>setMode(true));filteredLabel.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setMode(false)}});unfilteredLabel.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setMode(true)}});
+document.querySelectorAll(".navlinks a:not(.active)").forEach(link=>{link.addEventListener("click",e=>{const href=link.getAttribute("href");if(!href||href.startsWith("mailto:"))return;e.preventDefault();document.querySelectorAll(".navlinks a").forEach(a=>a.classList.remove("active","is-leaving"));link.classList.add("active","is-leaving");const page=document.querySelector(".page");setTimeout(()=>page&&page.classList.add("is-page-leaving"),260);setTimeout(()=>{if(href.startsWith("#")){const target=document.querySelector(href);if(target)target.scrollIntoView({behavior:"smooth"});else location.href=href}else location.href=href},980)})});
 </script></body></html>

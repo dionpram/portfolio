@@ -19,11 +19,11 @@
 .section{padding:0 80px 100px}.two-col{display:grid;grid-template-columns:700px minmax(0,1fr);gap:48px;align-items:stretch}.eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--pink);margin:0 0 12px}.section h2{font-size:44px;line-height:1.1;margin:0 0 48px}.experience{display:flex;flex-direction:column;gap:40px}.company{font-size:17px;font-weight:700;margin:0 0 4px}.company-line{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}.company-line .company{margin:0}.location{font-size:12px;color:var(--muted);white-space:nowrap}.remote-tag{display:inline-flex;align-items:center;margin-left:4px;padding:2px 6px;border:1px solid var(--line);border-radius:999px;font-size:10px;font-weight:600;line-height:1.2;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}.role-row{display:flex;justify-content:space-between;color:var(--muted);gap:24px;font-size:14px}.role-row+.role-row{margin-top:4px}.role-row time{font-size:13px}
 .look-stage{position:relative;min-height:100%;border-radius:16px;overflow:hidden}.look-card{position:relative;z-index:1;background:#fff;border:1px solid var(--line);border-radius:16px;padding:40px;width:100%;height:100%;transition:opacity .5s ease,transform .6s cubic-bezier(.22,1,.36,1),filter .5s ease}.experience-map{position:absolute;z-index:2;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:translateY(6px);filter:blur(3px);pointer-events:none;transition:opacity .5s ease,transform .6s cubic-bezier(.22,1,.36,1),filter .5s ease}.two-col:has(.experience:hover) .look-card{opacity:0;transform:translateY(-6px);filter:blur(3px);pointer-events:none}.two-col:has(.experience:hover) .experience-map{opacity:1;transform:translateY(0);filter:blur(0)}.look-card h3{font-size:28px;margin:0 0 24px}.look-card p{font-size:15px;line-height:1.7;color:var(--body);margin:0 0 26px}.contact-actions{display:flex;align-items:center;gap:24px}.contact-btn,.contact-link{position:relative;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;text-decoration:none}.contact-btn{overflow:hidden;background:var(--ink);color:#fff;padding:14px 24px;border-radius:4px}.contact-link{color:var(--blue)}.contact-btn::after,.contact-link::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left center;transition:transform .62s cubic-bezier(.22,1,.36,1);pointer-events:none}.contact-btn::after{left:18px;right:18px}.contact-btn:hover::after,.contact-btn:focus-visible::after,.contact-link:hover::after,.contact-link:focus-visible::after{transform:scaleX(1)}
 .snapshot{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px}.snapshot h2,.principles h2{font-size:44px;line-height:1.1;margin:0 0 48px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px}.card h3{font-size:22px;margin:0 0 16px}.card p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
-.principles{padding:100px 80px}.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}.principle h3{font-size:13px;margin:0 0 8px}.principle h3 a{position:relative;color:var(--blue);text-decoration:none}.principle h3 a::after{content:"";position:absolute;left:0;right:0;top:52%;height:3px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.22,1,.36,1);z-index:-1}.principle h3 a:hover::after,.principle h3 a:focus-visible::after{transform:scaleX(1)}.principle p{font-size:13px;line-height:1.6;color:var(--body);margin:0}.strength-grid{grid-template-columns:repeat(3,1fr)}
+.principles{padding:100px 80px}.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}.principle h3{font-size:13px;margin:0 0 8px}.principle p{font-size:13px;line-height:1.6;color:var(--body);margin:0}
 .footer{background:#fff;border-top:1px solid var(--line);padding:80px 80px 64px}.footer-line{height:1px;background:var(--line);margin-bottom:48px}.footer-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}.footer h2{font-size:40px;margin:0 0 24px}.footer-links{display:flex;align-items:center;gap:24px}.footer-links .contact-btn,.footer-links .contact-link{font-size:14px}.copyright{font-size:13px;color:var(--muted)}
 
 /* Filtered / unfiltered About mode */
-.hero-copy h1,.hero-copy>div,.look-card h3,.look-card p,.look-card .contact-actions,.snapshot .eyebrow,.snapshot h2,.card h3,.card p{transition:opacity .28s ease,transform .4s cubic-bezier(.22,1,.36,1)}
+.hero-copy h1,.hero-copy>div,.look-card h3,.look-card p,.look-card .contact-actions,.snapshot .eyebrow,.snapshot h2,.card h3,.card p,.principles .eyebrow,.principles h2,.principle h3,.principle p{transition:opacity .28s ease,transform .4s cubic-bezier(.22,1,.36,1)}
 body.about-switching .hero-copy h1,body.about-switching .hero-copy>div,body.about-switching .look-card h3,body.about-switching .look-card p,body.about-switching .look-card .contact-actions,body.about-switching .snapshot .eyebrow,body.about-switching .snapshot h2,body.about-switching .card h3,body.about-switching .card p,body.about-switching .principles .eyebrow,body.about-switching .principles h2,body.about-switching .principle h3,body.about-switching .principle p{opacity:0;transform:translateY(7px)}
 .about-modebar{position:fixed;left:50%;bottom:20px;z-index:50;transform:translateX(-50%);padding:10px 14px;background:rgba(250,250,251,.94);border:1px solid rgba(17,29,58,.12);border-radius:999px;box-shadow:0 10px 30px rgba(17,29,58,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .about-mode{display:flex;align-items:center;gap:12px;font:500 14px/20px "Instrument Sans",sans-serif;white-space:nowrap}
@@ -67,7 +67,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <div>
 <p class="eyebrow">Background</p><h2>Experience</h2>
 <div class="experience">
-<div><div class="company-line"><p class="company">Delivery Hero</p><span class="location">Berlin, Germany</span></div><div class="role-row"><span>Lead Product Designer</span><time>2023 - 2025</time></div><div class="role-row"><span>Senior UX/UI Designer</span><time>2021 - 2023</time></div></div>
+<div><div class="company-line"><p class="company">Delivery Hero</p><span class="location">Berlin, Germany</span></div><div class="role-row"><span>Lead Product Designer</span><time>2023 - Present</time></div><div class="role-row"><span>Senior UX/UI Designer</span><time>2021 - 2023</time></div></div>
 <div><div class="company-line"><p class="company">Vaadin</p><span class="location">Turku, Finland</span></div><div class="role-row"><span>UX Designer</span><time>2018 - 2021</time></div></div>
 <div><div class="company-line"><p class="company">Skookum</p><span class="location">Charlotte, NC, USA</span><span class="remote-tag">Remote from Bandung</span></div><div class="role-row"><span>UX Designer</span><time>2016 - 2017</time></div></div>
 <div><div class="company-line"><p class="company">PT Pentacode Digital</p><span class="location">Bandung, Indonesia</span></div><div class="role-row"><span>UX Designer</span><time>2012 - 2015</time></div></div>
@@ -87,11 +87,12 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 </section>
 
 <section class="principles">
-<p class="eyebrow">Working strengths</p><h2>Where I do my best work</h2>
-<div class="principle-grid strength-grid">
-<div class="principle"><h3><a href="/app-consolidation.html">Complex customer journeys →</a></h3><p>Migration, recovery paths, platform constraints, and the moments where a technically complex transition still needs to feel clear to customers.</p></div>
-<div class="principle"><h3><a href="/bento-foundation.html">Multi-brand design systems →</a></h3><p>Shared foundations and component behaviour that can scale across brands without forcing every product expression to become identical.</p></div>
-<div class="principle"><h3><a href="/bento-collaboration.html">Design + engineering collaboration →</a></h3><p>Component specifications, Dev Mode, documentation, and workflows that make design decisions easier to inspect, implement, and evolve.</p></div>
+<p id="principlesEyebrow" class="eyebrow">Principles</p><h2 id="principlesTitle">How I think about design</h2>
+<div class="principle-grid">
+<div class="principle"><h3 id="principle1Title">Think beyond the screen</h3><p id="principle1Copy">Great products aren't just well-designed interfaces-they're the result of thoughtful systems, collaboration, and shared understanding.</p></div>
+<div class="principle"><h3 id="principle2Title">Balance complexity</h3><p id="principle2Copy">Every design decision should work for users, support business goals, and respect technical realities.</p></div>
+<div class="principle"><h3 id="principle3Title">Build together</h3><p id="principle3Copy">The best ideas come from collaboration. Strong partnerships between design, engineering, and product create better outcomes.</p></div>
+<div class="principle"><h3 id="principle4Title">Details matter</h3><p id="principle4Copy">Thoughtful interactions, accessibility, and visual craft shape experiences people enjoy using every day.</p></div>
 </div>
 </section>
 </main>
@@ -106,7 +107,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <script>
 document.getElementById("copyrightYear").textContent=new Date().getFullYear();
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add("page-ready")));
-
+document.querySelectorAll(".navlinks a:not(.active)").forEach(link=>{link.addEventListener("click",e=>{const href=link.getAttribute("href");if(!href||href.startsWith("mailto:")||href.startsWith("http"))return;e.preventDefault();document.querySelectorAll(".navlinks a").forEach(a=>a.classList.remove("active","is-leaving"));link.classList.add("active","is-leaving");setTimeout(()=>document.body.classList.add("page-leaving"),260);setTimeout(()=>location.href=href,980)})});
 const aboutFiltered={
   headline:'Lead <span class="orange">Designer</span>. Bedroom Musician. <span class="green">Modular</span> Nerd.',
   intro:'<p>Hi, I\'m Dion, a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p><br><p>I\'ve always been fascinated by how simple, well-designed pieces come together to create something bigger. I naturally break complex problems into smaller, bite-sized parts, make each part understandable on its own, then connect them into a system that can grow without becoming a mess. Whether it\'s a product, a design system, a modular synthesizer, or even LEGO, I\'m drawn to things that are flexible, reusable, and thoughtfully built.</p><br><p>That curiosity has shaped how I approach design throughout my career.</p>',
@@ -166,6 +167,9 @@ function applyAboutMode(data){
   $("snapshotEyebrow").innerHTML=data.snapshotEyebrow;
   $("snapshotTitle").textContent=data.snapshotTitle;
   data.cards.forEach((item,i)=>{$("card"+(i+1)+"Title").innerHTML=item[0];$("card"+(i+1)+"Copy").innerHTML=item[1]});
+  $("principlesEyebrow").textContent=data.principlesEyebrow;
+  $("principlesTitle").textContent=data.principlesTitle;
+  data.principles.forEach((item,i)=>{$("principle"+(i+1)+"Title").innerHTML=item[0];$("principle"+(i+1)+"Copy").innerHTML=item[1]});
 }
 function setAboutMode(wantUnfiltered){
   if(aboutAnimating||aboutIsUnfiltered===wantUnfiltered)return;
