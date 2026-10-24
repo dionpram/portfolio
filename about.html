@@ -106,7 +106,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 <script>
 document.getElementById("copyrightYear").textContent=new Date().getFullYear();
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add("page-ready")));
-document.querySelectorAll(".navlinks a:not(.active)").forEach(link=>{link.addEventListener("click",e=>{const href=link.getAttribute("href");if(!href||href.startsWith("mailto:")||href.startsWith("http"))return;e.preventDefault();document.querySelectorAll(".navlinks a").forEach(a=>a.classList.remove("active","is-leaving"));link.classList.add("active","is-leaving");setTimeout(()=>document.body.classList.add("page-leaving"),260);setTimeout(()=>location.href=href,980)})});
+
 const aboutFiltered={
   headline:'Lead <span class="orange">Designer</span>. Bedroom Musician. <span class="green">Modular</span> Nerd.',
   intro:'<p>Hi, I\'m Dion, a Lead Product Designer based in Berlin with 13+ years of experience designing digital products across mobile and web.</p><br><p>I\'ve always been fascinated by how simple, well-designed pieces come together to create something bigger. I naturally break complex problems into smaller, bite-sized parts, make each part understandable on its own, then connect them into a system that can grow without becoming a mess. Whether it\'s a product, a design system, a modular synthesizer, or even LEGO, I\'m drawn to things that are flexible, reusable, and thoughtfully built.</p><br><p>That curiosity has shaped how I approach design throughout my career.</p>',
